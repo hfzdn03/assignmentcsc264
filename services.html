@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<head>
+	<title>Type of Service</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
+	<style>
+		* {
+  box-sizing: border-box;
+}
+    table, th, td{
+      border: 1px solid  black;
+      border-collapse: collapse;
+		padding: 10px;
+		text-align: center;
+    }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+	background-color: #f1f1f1;
+}
+
+/* Style the header */
+header {
+  background-color: #099;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+  background-color: #333;
+  overflow: hidden;
+}
+		
+nav a	{
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+		
+nav a:hover	{
+  background-color: #ddd;
+  color: black;
+}
+		
+nav a.active	{
+  background-color: #04AA6D;
+  color: white;
+}	
+
+/* Style the list inside the menu */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  	padding: 20px;
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+  	background-color: #f1f1f1;
+}
+
+/* Clear floats after the columns */
+section:after {
+  content: "";
+  display: table;
+  clear: both;
+	height: 100%;
+	width: 100%;
+}
+
+/* Style the footer */
+footer {
+  	background-color: #6cf;
+  	padding: 10px;
+  	color: white;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 60px;
+}
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+	</style>
+</head>
+<body>
+	<header><h2>Type of Services</h2></header>
+	<section>
+		<nav>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="services.html">Services</a></li>
+				<li><a href="customer.html">Customer</a></li>
+				<li><a href="findus.html">Find us</a></li>
+				<li><a href="aboutus.html">About us</a></li>
+			</ul>
+		</nav>
+		<article>
+			<h1>Services</h1>
+      <table>
+        <tr>
+          <th>Type of Service</th>
+          <th>Charge(RM)</th>
+        </tr>
+        <tr>
+          <td>Format/Re-install Windows</td>
+          <td>35(including charge for Windows key)</td>
+        </tr>
+        <tr>
+          <td>Virus Removal</td>
+          <td>10</td>
+        </tr>
+        <tr>
+          <td>Hardware Diagnose</td>
+          <td>10</td>
+        </tr>
+        <tr>
+          <td>PC dust cleaning</td>
+          <td>10</td>
+        </tr>
+
+      </table>
+		</article>
+	</section>
+
+	<footer>
+		<p>Brought to you by CSC264</p>
+	</footer>
+</body>

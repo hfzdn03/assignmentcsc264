@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<head>
+	<title>Customer registration</title>
+	<style>
+		* {
+  box-sizing: border-box;
+}
+    table, th, td{
+      border: 1px solid  black;
+      border-collapse: collapse;
+    }		
+		fieldset{
+			border: 1px groove;
+		}
+		legend{
+			font-weight: bold;
+		}	
+		
+body {
+  font-family: Arial, Helvetica, sans-serif;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	background-color: #f1f1f1;
+}
+
+/* Style the header */
+header {
+  background-color: #099;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+  background-color: #333;
+  overflow: hidden;
+}
+		
+nav a	{
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+		
+nav a:hover	{
+  background-color: #ddd;
+  color: black;
+}
+		
+nav a.active	{
+  background-color: #04AA6D;
+  color: white;
+}	
+
+/* Style the list inside the menu */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  	float: left;
+  	padding: 20px;
+  	width: 70%;
+  	background-color: #f1f1f1;
+}
+
+/* Clear floats after the columns */
+section:after {
+  content: "";
+  display: table;
+  clear: both;
+	height: 100%;
+	width: 100%;
+}
+
+/* Style the footer */
+footer {
+  	background-color: #6cf;
+  	padding: 10px;
+  	color: white;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 60px;
+}
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+	</style>
+	<script>
+		function myFunction(){
+			var x = document.forms["CustRegist"]["fullname"].value;
+  		if (x == "") {
+				alert("Form must be filled out");
+				return false;
+			}
+		else
+			alert("Form submitted! Please wait for an email/SMS for your form summary/customer slip. Thank you.");
+			return false;
+		}
+	</script>
+</head>
+<body>
+	<header><h2>Customer registration</h2></header>
+	<section>
+		<nav>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="services.html">Services</a></li>
+				<li><a href="customer.html">Customer</a></li>
+				<li><a href="findus.html">Find us</a></li>
+				<li><a href="aboutus.html">About us</a></li>
+			</ul>
+		</nav>
+		<article>
+			<h1>In this page, you can register yourself as a customer and choose your desired service</h1>
+			<form name="CustRegist" action="/customer.php" onsubmit="return myFunction()" method="post" required>
+			<fieldset>
+			<legend>Customer</legend>
+				<label for="Fname">Customer name:</label><br>
+				<input type="text" name="fullname" id="Fname"><br>
+				<p>Type of device:</p>
+				<input type="radio" name="pc" id="desktop" value="desktop">
+				<label for="desktop">Desktop</label>
+				<input type="radio" name="pc" id="notebook" value="notebook">
+				<label for="notebook">Notebook</label><br><br>
+				<label for="Brand">Brand:</label>
+				<select name="Brand" id="Brand">
+					<option selected>Select your PC brand..</option>
+					<option value="lenovo">Lenovo</option>
+					<option value="acer">Acer</option>
+					<option value="dell">Dell</option>
+					<option value="asus">Asus</option>
+					<option value="hp">HP</option>
+					<option value="msi">MSI</option>
+				</select><br><br>
+				<label for="service">Type of service:</label>
+				<p>For price, please check at the 'services' section on the left</p>
+				<select name="service" id="service">
+					<option selected>Select your desired service</option>
+					<option value="format">Format/Re-install Windows</option>
+					<option value="virusremove">Virus Removal</option>
+					<option value="hardwarediagnosis">Hardware Diagnose</option>
+					<option value="dustclean">Dust Cleaning</option>
+				</select><br><br>
+				<label for="pnumber">Phone Number:</label><br>
+				<input type="text" name="phone" value="+60" id="pnumber"><br><br>
+				<label for="email">Email:</label><br>
+				<input type="text" name="email"  id="email"><br><br>				
+				<label for="payment">Payment Method:</label><br>
+				<input type="radio" name="payment" value="credit" id="payment">Card/Paywave
+				<input type="radio" name="payment" value="debit" id="payment">Cash<br><br>
+				
+			</fieldset><br>
+			<input type="submit" value="Submit">
+			</form>
+		</article>
+	</section>
+
+	<footer>
+		<p style="font-family: Arial; font-size: 80%">&copy Assignment for subject CSC264</p>
+	</footer>
+	<script></script>
+</body>
